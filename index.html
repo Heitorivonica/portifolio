@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Heitor Ivonica - Portfólio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            background-color: #0a0a14;
+            color: #f0f0f8;
+        }
+
+        header {
+            margin-top: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 9%;
+            background-color: rgba(10, 10, 20, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(156, 81, 209, 0.3);
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: #a855f7;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.5s ease;
+            text-shadow: 0 0 5px rgba(168, 85, 247, 0.3);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 12px #a855f7;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: #e2e8f0;
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #c084fc;
+            border-bottom: 3px solid #c084fc;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 5rem;
+        }
+
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8rem;
+            background-color: #0a0a14;
+        }
+
+        .home .conteudo-inicial h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        span {
+            color: #c084fc;
+            text-shadow: 0 0 6px rgba(192, 132, 252, 0.5);
+        }
+
+        .conteudo-inicial h3 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .home-img {
+            border-radius: 50%;
+        }
+
+        .home-img img {
+            position: relative;
+            width: 32vh;
+            border-radius: 50%;
+            box-shadow: 0 0 30px #a855f7;
+            cursor: pointer;
+            transition: 0.2s linear;
+            border: 2px solid #a855f7;
+        }
+
+        .home-img img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px #c084fc;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background-color: transparent;
+            border: 0.2rem solid #a855f7;
+            font-size: 2rem;
+            border-radius: 50%;
+            margin: 3rem 1.5rem 3rem 0;
+            transition: 0.3s ease;
+            color: #e2e8f0;
+        }
+
+        .social-icons a:hover {
+            color: #0a0a14;
+            transform: scale(1.3) translateY(-5px);
+            background-color: #c084fc;
+            box-shadow: 0 0 28px #a855f7;
+            border-color: #c084fc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background-color: transparent;
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            color: #c084fc;
+            letter-spacing: 0.3rem;
+            font-weight: 600;
+            border: 2px solid #a855f7;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+            background-color: #a855f7;
+            color: #0a0a14;
+            box-shadow: 0 0 28px #a855f7;
+            border-color: #c084fc;
+        }
+
+        .typing-text {
+            font-size: 34px;
+            font-weight: 600;
+            min-width: 280px;
+        }
+
+        .typing-text span {
+            position: relative;
+        }
+
+        .typing-text span::before {
+            content: "Desenvolvedor BackEnd";
+            color: #c084fc;
+            animation: words 20s infinite;
+        }
+
+        .typing-text span::after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            border-left: 3px solid #c084fc;
+            right: -8px;
+            animation: cursor 0.6s infinite;
+        }
+
+        @keyframes cursor {
+            to {
+                border-left-color: #a855f7;
+            }
+        }
+
+        @keyframes words {
+            0%, 20% {
+                content: "Desenvolvedor BackEnd";
+            }
+            21%, 40% {
+                content: "Web Designer ";
+            }
+            41%, 60% {
+                content: "Desenvolvedor de Software";
+            }
+            61%, 80%{
+                content: "Desenvolvedor Web"
+            }
+        }
+
+        .section-title {
+            font-size: 5rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            color: #f0f0f8;
+        }
+
+        .section-title span {
+            color: #c084fc;
+            text-shadow: 0 0 8px #a855f7;
+        }
+
+        .habilidades-container, .formacao-container, .experiencias-container, .cursos-container, .projetos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: #12121c;
+            padding: 3rem;
+            border-radius: 2rem;
+            border: 2px solid #6b21a5;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 22px #a855f7;
+            border-color: #c084fc;
+        }
+
+        .card h3 {
+            font-size: 2.5rem;
+            color: #d8b4fe;
+            margin-bottom: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1.6rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .btn-small {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: 1px solid #a855f7;
+            border-radius: 2rem;
+            color: #c084fc;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card .btn-small:hover {
+            background-color: #a855f7;
+            color: #0a0a14;
+            box-shadow: 0 0 12px #a855f7;
+        }
+
+        .experiencia-titulo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #d8b4fe;
+        }
+
+        .contato-info {
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .contato-info ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .contato-info li {
+            margin: 1rem 0;
+            font-size: 1.8rem;
+            color: #e2e8f0;
+        }
+
+        .contato-info i {
+            color: #c084fc;
+            margin-right: 1rem;
+        }
+
+        .contato-info .btn {
+            margin-top: 2rem;
+            display: inline-block;
+        }
+
+        /* Botão Gmail especial */
+        .btn-gmail {
+            background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+            color: white !important;
+            border: none;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .btn-gmail:hover {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+            color: #0a0a14 !important;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #a855f7;
+        }
+
+        @media (max-width: 995px) {
+            html {
+                font-size: 55%;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 60%;
+                border-left: 3px solid #a855f7;
+                border-bottom: 3px solid #a855f7;
+                border-top-left-radius: 2rem;
+                padding: 1rem;
+                background-color: #12121c;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem 0;
+                text-align: center;
+            }
+
+            .home {
+                flex-direction: column;
+                gap: 4rem;
+                text-align: center;
+            }
+
+            .home .conteudo-inicial h3 {
+                font-size: 2.5rem;
+            }
+
+            .conteudo-inicial h1 {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Heitor</a>
+        <nav>
+            <a href="#inicio" class="active">Início</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#formacao">Formação</a>
+            <a href="#experiencias">Experiências</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- INÍCIO -->
+    <section id="inicio" class="home">
+        <div class="home-img">
+            <img src="heitor.jpg" alt="Heitor">
+        </div>
+        <div class="conteudo-inicial">
+            <h1>Olá, sou <span>Heitor</span></h1>
+            <h3 class="typing-text">Eu sou <span></span></h3>
+            <!-- Ícones sociais removidos daqui conforme solicitado -->
+        </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades">
+        <h2 class="section-title">Minhas <span>Habilidades</span></h2>
+        <div class="habilidades-container">
+            <div class="card">
+                <h3>☕ Java</h3>
+                <p>Desenvolvimento BackEnd com foco em aplicações robustas e escaláveis</p>
+            </div>
+            <div class="card">
+                <h3>🔄 APIs REST</h3>
+                <p>Criação e integração de APIs REST, métodos HTTP, CRUD completo</p>
+            </div>
+            <div class="card">
+                <h3>🗄️ MongoDB</h3>
+                <p>Banco de dados NoSQL para aplicações modernas</p>
+            </div>
+            <div class="card">
+                <h3>📊 Excel</h3>
+                <p>Análise de dados com PROCV e funções avançadas</p>
+            </div>
+            <div class="card">
+                <h3>🌐 HTML/CSS/JS</h3>
+                <p>Conhecimentos em front-end para desenvolvimento completo</p>
+            </div>
+            <div class="card">
+                <h3>🐙 Git & GitHub</h3>
+                <p>Controle de versão e trabalho colaborativo</p>
+            </div>
+            <div class="card">
+                <h3>🔧 Infraestrutura</h3>
+                <p>Configuração de rede, FreePBX, ramais IP, roteadores</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos">
+        <h2 class="section-title">Meus <span>Projetos</span></h2>
+        <div class="projetos-container">
+            <div class="card">
+                <h3>📱 API de Clientes</h3>
+                <p>API REST completa com CRUD em Java Spring Boot e MongoDB</p>
+                <p><strong>Tecnologias:</strong> Java, Spring Boot, MongoDB, Postman</p>
+                <a href="#" class="btn-small">Ver no GitHub</a>
+            </div>
+            <div class="card">
+                <h3>🔗 Sistema de Automação</h3>
+                <p>Automação de cadastro de clientes integrada a APIs REST</p>
+                <p><strong>Tecnologias:</strong> Python, APIs REST, JSON</p>
+                <a href="#" class="btn-small">Ver no GitHub</a>
+            </div>
+            <div class="card">
+                <h3>🌐 Portfólio Pessoal</h3>
+                <p>Site de portfólio responsivo com animações e tema roxo</p>
+                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                <a href="#" class="btn-small">Ver no GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMAÇÃO ACADÊMICA -->
+    <section id="formacao">
+        <h2 class="section-title">Minha <span>Formação</span></h2>
+        <div class="formacao-container">
+            <div class="card">
+                <h3>🎓 Tecnólogo em ADS</h3>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+                <p>Eniac - Centro Universitário</p>
+                <p>08/2024 – 12/2026</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title" style="margin-top: 5rem;">Meus <span>Cursos</span></h2>
+        <div class="cursos-container">
+            <div class="card">
+                <h3>📚 Carreira BackEnd Java</h3>
+                <p>Alura</p>
+                <p>02/2026 – 07/2026 (Em andamento)</p>
+            </div>
+            <div class="card">
+                <h3>🌐 HTML, CSS e JavaScript</h3>
+                <p>Bradesco</p>
+                <p>Concluído - 02/2026</p>
+            </div>
+            <div class="card">
+                <h3>💻 Hardware de Computadores</h3>
+                <p>Cisco Network Academy</p>
+                <p>04/2025 – 05/2025</p>
+            </div>
+            <div class="card">
+                <h3>🚀 BootCamp NTT Data</h3>
+                <p>DIO</p>
+                <p>04/2026 – 08/2026 (Em andamento)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIÊNCIAS -->
+    <section id="experiencias">
+        <h2 class="section-title">Minhas <span>Experiências</span></h2>
+        <div class="experiencias-container">
+            <div class="card">
+                <h3>Grupo Digital Soluções Financeiras</h3>
+                <p class="experiencia-titulo">Estágio de TI</p>
+                <p>10/2025 – 03/2026 | Guarulhos-SP</p>
+                <p>Resolução de incidentes técnicos via suporte remoto</p>
+                <p>Monitoramento e manutenção de automações em Python com APIs</p>
+                <p>Análise e validação de dados usando Excel (PROCV)</p>
+            </div>
+            
+            <div class="card">
+                <h3>RFTecnologia</h3>
+                <p class="experiencia-titulo">Estagiário de TI</p>
+                <p>07/2025 – 10/2025 | Guarulhos-SP</p>
+                <p>Automação em Python com integração a APIs REST para cadastro de clientes</p>
+                <p>Otimização de processos operacionais com scripts</p>
+                <p>Configuração de infraestrutura de rede (roteadores, ramais IP, FreePBX)</p>
+            </div>
+            
+            <div class="card">
+                <h3>Colégio Torricelli</h3>
+                <p class="experiencia-titulo">Estagiário de TI</p>
+                <p>02/2025 – 05/2025 | Guarulhos-SP</p>
+                <p>Suporte técnico a usuários e resolução de problemas de acesso</p>
+                <p>Diagnóstico, formatação e manutenção de computadores</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato">
+        <h2 class="section-title">Entre em <span>Contato</span></h2>
+        <div class="contato-info">
+            <div class="social-icons" style="justify-content: center;">
+                <a href="https://linkedin.com/in/heitor-ivonica" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Heitorivonica" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/5511941797133" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <ul>
+                <li><i class="fas fa-envelope"></i> ivonicaheitor@gmail.com</li>
+                <li><i class="fas fa-phone"></i> (11) 94179-7133</li>
+            </ul>
+            <!-- Botão que abre o Gmail com assunto e corpo pré-preenchidos -->
+            <a href="#" id="gmailBtn" class="btn btn-gmail" style="margin-top: 2rem; display: inline-block;">
+                <i class="fab fa-google"></i> Enviar e-mail via Gmail
+            </a>
+        </div>
+    </section>
+
+    <script>
+        // Scroll ativo no menu
+        let sections = document.querySelectorAll('section');
+        let navMenu = document.querySelectorAll('nav a');
+
+        window.onscroll = () => {
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+
+                if(top >= offset && top < offset + height) {
+                    navMenu.forEach(link => {
+                        link.classList.remove('active');
+                        let targetLink = document.querySelector('nav a[href*=' + id + ']');
+                        if(targetLink) targetLink.classList.add('active');
+                    });
+                }
+            });
+        };
+
+        // Função para abrir o Gmail (web ou app) com campos pré-preenchidos
+        document.getElementById('gmailBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const emailDestino = 'ivonicaheitor@gmail.com';
+            const assunto = 'Contato via Portfólio - Heitor';
+            const corpo = 'Olá Heitor,%0D%0A%0D%0AEncontrei seu portfólio e gostaria de entrar em contato.%0D%0A%0D%0A*(Escreva sua mensagem aqui)*%0D%0A%0D%0AAtenciosamente,%0D%0A';
+            
+            // Opção 1: Tentar abrir o Gmail diretamente (funciona melhor em desktop)
+            // URL do Gmail: https://mail.google.com/mail/?view=cm&fs=1&to=email&su=assunto&body=corpo
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailDestino}&su=${encodeURIComponent(assunto)}&body=${corpo}`;
+            
+            // Opção 2: Fallback para mailto (caso o usuário prefira cliente padrão)
+            const mailtoUrl = `mailto:${emailDestino}?subject=${encodeURIComponent(assunto)}&body=${corpo}`;
+            
+            // Tenta abrir o Gmail primeiro (nova aba)
+            const gmailWindow = window.open(gmailUrl, '_blank');
+            
+            // Se não conseguir abrir (popup bloqueado ou dispositivo mobile sem gmail app), usa mailto
+            if (!gmailWindow || gmailWindow.closed || typeof gmailWindow.closed === 'undefined') {
+                window.location.href = mailtoUrl;
+            }
+        });
+
+        // Menu mobile toggle
+        const styleMobile = () => {
+            if(window.innerWidth <= 995 && !document.querySelector('.menu-toggle')) {
+                const toggleBtn = document.createElement('div');
+                toggleBtn.classList.add('menu-toggle');
+                toggleBtn.innerHTML = '<i class="fas fa-bars" style="font-size: 2.5rem; color: #c084fc; cursor:pointer;"></i>';
+                const header = document.querySelector('header');
+                if(header && !document.querySelector('.menu-toggle')) {
+                    header.appendChild(toggleBtn);
+                    toggleBtn.style.position = 'relative';
+                    toggleBtn.style.display = 'flex';
+                    toggleBtn.style.justifyContent = 'center';
+                    toggleBtn.style.alignItems = 'center';
+                    toggleBtn.style.marginLeft = 'auto';
+                    toggleBtn.style.paddingLeft = '1rem';
+                    toggleBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const navMenuMobile = document.querySelector('nav');
+                        if(navMenuMobile) {
+                            navMenuMobile.classList.toggle('active');
+                        }
+                    });
+                }
+            } else if(window.innerWidth > 995) {
+                const toggle = document.querySelector('.menu-toggle');
+                if(toggle) toggle.remove();
+                const navMenuMobile = document.querySelector('nav');
+                if(navMenuMobile) navMenuMobile.classList.remove('active');
+            }
+        };
+
+        window.addEventListener('resize', () => {
+            styleMobile();
+        });
+        styleMobile();
+        
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
