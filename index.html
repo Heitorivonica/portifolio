@@ -123,29 +123,6 @@
             box-shadow: 0 0 35px #c084fc;
         }
 
-        .social-icons a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 4rem;
-            height: 4rem;
-            background-color: transparent;
-            border: 0.2rem solid #a855f7;
-            font-size: 2rem;
-            border-radius: 50%;
-            margin: 3rem 1.5rem 3rem 0;
-            transition: 0.3s ease;
-            color: #e2e8f0;
-        }
-
-        .social-icons a:hover {
-            color: #0a0a14;
-            transform: scale(1.3) translateY(-5px);
-            background-color: #c084fc;
-            box-shadow: 0 0 28px #a855f7;
-            border-color: #c084fc;
-        }
-
         .btn {
             display: inline-block;
             padding: 1rem 2.8rem;
@@ -201,18 +178,10 @@
         }
 
         @keyframes words {
-            0%, 20% {
-                content: "Desenvolvedor BackEnd";
-            }
-            21%, 40% {
-                content: "Web Designer ";
-            }
-            41%, 60% {
-                content: "Desenvolvedor de Software";
-            }
-            61%, 80%{
-                content: "Desenvolvedor Web"
-            }
+            0%, 20% { content: "Desenvolvedor BackEnd"; }
+            21%, 40% { content: "Web Designer "; }
+            41%, 60% { content: "Desenvolvedor de Software"; }
+            61%, 80% { content: "Desenvolvedor Web"; }
         }
 
         .section-title {
@@ -287,39 +256,70 @@
             color: #d8b4fe;
         }
 
+        /* ===== SEÇÃO CONTATO ===== */
         .contato-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            font-size: 1.8rem;
+            gap: 2.5rem;
         }
 
-        .contato-info ul {
+        .social-icons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+            height: 5rem;
+            background-color: transparent;
+            border: 0.2rem solid #a855f7;
+            font-size: 2.5rem;
+            border-radius: 50%;
+            transition: 0.3s ease;
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #0a0a14;
+            transform: scale(1.2) translateY(-5px);
+            background-color: #c084fc;
+            box-shadow: 0 0 28px #a855f7;
+            border-color: #c084fc;
+        }
+
+        .contato-dados {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contato-dados li {
             list-style: none;
-            padding: 0;
-            margin-top: 2rem;
-        }
-
-        .contato-info li {
-            margin: 1rem 0;
             font-size: 1.8rem;
             color: #e2e8f0;
         }
 
-        .contato-info i {
+        .contato-dados i {
             color: #c084fc;
             margin-right: 1rem;
         }
 
-        .contato-info .btn {
-            margin-top: 2rem;
-            display: inline-block;
-        }
-
-        /* Botão Gmail especial */
         .btn-gmail {
             background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
             color: white !important;
             border: none;
             box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+            letter-spacing: 0.1rem;
         }
 
         .btn-gmail:hover {
@@ -330,10 +330,8 @@
         }
 
         @media (max-width: 995px) {
-            html {
-                font-size: 55%;
-            }
-            
+            html { font-size: 55%; }
+
             nav {
                 position: absolute;
                 top: 100%;
@@ -347,9 +345,7 @@
                 display: none;
             }
 
-            nav.active {
-                display: block;
-            }
+            nav.active { display: block; }
 
             nav a {
                 display: block;
@@ -364,17 +360,9 @@
                 text-align: center;
             }
 
-            .home .conteudo-inicial h3 {
-                font-size: 2.5rem;
-            }
-
-            .conteudo-inicial h1 {
-                font-size: 4rem;
-            }
-            
-            .section-title {
-                font-size: 3.5rem;
-            }
+            .home .conteudo-inicial h3 { font-size: 2.5rem; }
+            .conteudo-inicial h1 { font-size: 4rem; }
+            .section-title { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -391,7 +379,6 @@
         </nav>
     </header>
 
-    <!-- INÍCIO -->
     <section id="inicio" class="home">
         <div class="home-img">
             <img src="heitor.jpg" alt="Heitor">
@@ -399,46 +386,22 @@
         <div class="conteudo-inicial">
             <h1>Olá, sou <span>Heitor</span></h1>
             <h3 class="typing-text">Eu sou <span></span></h3>
-            <!-- Ícones sociais removidos daqui conforme solicitado -->
         </div>
     </section>
 
-    <!-- HABILIDADES -->
     <section id="habilidades">
         <h2 class="section-title">Minhas <span>Habilidades</span></h2>
         <div class="habilidades-container">
-            <div class="card">
-                <h3>☕ Java</h3>
-                <p>Desenvolvimento BackEnd com foco em aplicações robustas e escaláveis</p>
-            </div>
-            <div class="card">
-                <h3>🔄 APIs REST</h3>
-                <p>Criação e integração de APIs REST, métodos HTTP, CRUD completo</p>
-            </div>
-            <div class="card">
-                <h3>🗄️ MongoDB</h3>
-                <p>Banco de dados NoSQL para aplicações modernas</p>
-            </div>
-            <div class="card">
-                <h3>📊 Excel</h3>
-                <p>Análise de dados com PROCV e funções avançadas</p>
-            </div>
-            <div class="card">
-                <h3>🌐 HTML/CSS/JS</h3>
-                <p>Conhecimentos em front-end para desenvolvimento completo</p>
-            </div>
-            <div class="card">
-                <h3>🐙 Git & GitHub</h3>
-                <p>Controle de versão e trabalho colaborativo</p>
-            </div>
-            <div class="card">
-                <h3>🔧 Infraestrutura</h3>
-                <p>Configuração de rede, FreePBX, ramais IP, roteadores</p>
-            </div>
+            <div class="card"><h3>☕ Java</h3><p>Desenvolvimento BackEnd com foco em aplicações robustas e escaláveis</p></div>
+            <div class="card"><h3>🔄 APIs REST</h3><p>Criação e integração de APIs REST, métodos HTTP, CRUD completo</p></div>
+            <div class="card"><h3>🗄️ MongoDB</h3><p>Banco de dados NoSQL para aplicações modernas</p></div>
+            <div class="card"><h3>📊 Excel</h3><p>Análise de dados com PROCV e funções avançadas</p></div>
+            <div class="card"><h3>🌐 HTML/CSS/JS</h3><p>Conhecimentos em front-end para desenvolvimento completo</p></div>
+            <div class="card"><h3>🐙 Git & GitHub</h3><p>Controle de versão e trabalho colaborativo</p></div>
+            <div class="card"><h3>🔧 Infraestrutura</h3><p>Configuração de rede, FreePBX, ramais IP, roteadores</p></div>
         </div>
     </section>
 
-    <!-- PROJETOS -->
     <section id="projetos">
         <h2 class="section-title">Meus <span>Projetos</span></h2>
         <div class="projetos-container">
@@ -458,12 +421,11 @@
                 <h3>🌐 Portfólio Pessoal</h3>
                 <p>Site de portfólio responsivo com animações e tema roxo</p>
                 <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
-                <a href="#" class="btn-small">Ver no GitHub</a>
+                <a href="https://github.com/Heitorivonica/portifolio" target="_blank" class="btn-small">Ver no GitHub</a>
             </div>
         </div>
     </section>
 
-    <!-- FORMAÇÃO ACADÊMICA -->
     <section id="formacao">
         <h2 class="section-title">Minha <span>Formação</span></h2>
         <div class="formacao-container">
@@ -474,33 +436,15 @@
                 <p>08/2024 – 12/2026</p>
             </div>
         </div>
-        
         <h2 class="section-title" style="margin-top: 5rem;">Meus <span>Cursos</span></h2>
         <div class="cursos-container">
-            <div class="card">
-                <h3>📚 Carreira BackEnd Java</h3>
-                <p>Alura</p>
-                <p>02/2026 – 07/2026 (Em andamento)</p>
-            </div>
-            <div class="card">
-                <h3>🌐 HTML, CSS e JavaScript</h3>
-                <p>Bradesco</p>
-                <p>Concluído - 02/2026</p>
-            </div>
-            <div class="card">
-                <h3>💻 Hardware de Computadores</h3>
-                <p>Cisco Network Academy</p>
-                <p>04/2025 – 05/2025</p>
-            </div>
-            <div class="card">
-                <h3>🚀 BootCamp NTT Data</h3>
-                <p>DIO</p>
-                <p>04/2026 – 08/2026 (Em andamento)</p>
-            </div>
+            <div class="card"><h3>📚 Carreira BackEnd Java</h3><p>Alura</p><p>02/2026 – 07/2026 (Em andamento)</p></div>
+            <div class="card"><h3>🌐 HTML, CSS e JavaScript</h3><p>Bradesco</p><p>Concluído - 02/2026</p></div>
+            <div class="card"><h3>💻 Hardware de Computadores</h3><p>Cisco Network Academy</p><p>04/2025 – 05/2025</p></div>
+            <div class="card"><h3>🚀 BootCamp NTT Data</h3><p>DIO</p><p>04/2026 – 08/2026 (Em andamento)</p></div>
         </div>
     </section>
 
-    <!-- EXPERIÊNCIAS -->
     <section id="experiencias">
         <h2 class="section-title">Minhas <span>Experiências</span></h2>
         <div class="experiencias-container">
@@ -512,7 +456,6 @@
                 <p>Monitoramento e manutenção de automações em Python com APIs</p>
                 <p>Análise e validação de dados usando Excel (PROCV)</p>
             </div>
-            
             <div class="card">
                 <h3>RFTecnologia</h3>
                 <p class="experiencia-titulo">Estagiário de TI</p>
@@ -521,7 +464,6 @@
                 <p>Otimização de processos operacionais com scripts</p>
                 <p>Configuração de infraestrutura de rede (roteadores, ramais IP, FreePBX)</p>
             </div>
-            
             <div class="card">
                 <h3>Colégio Torricelli</h3>
                 <p class="experiencia-titulo">Estagiário de TI</p>
@@ -532,28 +474,31 @@
         </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
         <h2 class="section-title">Entre em <span>Contato</span></h2>
         <div class="contato-info">
-            <div class="social-icons" style="justify-content: center;">
-                <a href="https://linkedin.com/in/heitor-ivonica" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Heitorivonica" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/5511941797133" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <div class="social-icons-container">
+                <a href="https://linkedin.com/in/heitor-ivonica" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Heitorivonica" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://wa.me/5511941797133" target="_blank" class="social-icon" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-            <ul>
+            <ul class="contato-dados">
                 <li><i class="fas fa-envelope"></i> ivonicaheitor@gmail.com</li>
                 <li><i class="fas fa-phone"></i> (11) 94179-7133</li>
             </ul>
-            <!-- Botão que abre o Gmail com assunto e corpo pré-preenchidos -->
-            <a href="#" id="gmailBtn" class="btn btn-gmail" style="margin-top: 2rem; display: inline-block;">
+            <a href="#" id="gmailBtn" class="btn btn-gmail">
                 <i class="fab fa-google"></i> Enviar e-mail via Gmail
             </a>
         </div>
     </section>
 
     <script>
-        // Scroll ativo no menu
         let sections = document.querySelectorAll('section');
         let navMenu = document.querySelectorAll('nav a');
 
@@ -563,7 +508,6 @@
                 let offset = sec.offsetTop - 150;
                 let height = sec.offsetHeight;
                 let id = sec.getAttribute('id');
-
                 if(top >= offset && top < offset + height) {
                     navMenu.forEach(link => {
                         link.classList.remove('active');
@@ -574,31 +518,19 @@
             });
         };
 
-        // Função para abrir o Gmail (web ou app) com campos pré-preenchidos
         document.getElementById('gmailBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            
             const emailDestino = 'ivonicaheitor@gmail.com';
             const assunto = 'Contato via Portfólio - Heitor';
             const corpo = 'Olá Heitor,%0D%0A%0D%0AEncontrei seu portfólio e gostaria de entrar em contato.%0D%0A%0D%0A*(Escreva sua mensagem aqui)*%0D%0A%0D%0AAtenciosamente,%0D%0A';
-            
-            // Opção 1: Tentar abrir o Gmail diretamente (funciona melhor em desktop)
-            // URL do Gmail: https://mail.google.com/mail/?view=cm&fs=1&to=email&su=assunto&body=corpo
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailDestino}&su=${encodeURIComponent(assunto)}&body=${corpo}`;
-            
-            // Opção 2: Fallback para mailto (caso o usuário prefira cliente padrão)
             const mailtoUrl = `mailto:${emailDestino}?subject=${encodeURIComponent(assunto)}&body=${corpo}`;
-            
-            // Tenta abrir o Gmail primeiro (nova aba)
             const gmailWindow = window.open(gmailUrl, '_blank');
-            
-            // Se não conseguir abrir (popup bloqueado ou dispositivo mobile sem gmail app), usa mailto
             if (!gmailWindow || gmailWindow.closed || typeof gmailWindow.closed === 'undefined') {
                 window.location.href = mailtoUrl;
             }
         });
 
-        // Menu mobile toggle
         const styleMobile = () => {
             if(window.innerWidth <= 995 && !document.querySelector('.menu-toggle')) {
                 const toggleBtn = document.createElement('div');
@@ -616,9 +548,7 @@
                     toggleBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const navMenuMobile = document.querySelector('nav');
-                        if(navMenuMobile) {
-                            navMenuMobile.classList.toggle('active');
-                        }
+                        if(navMenuMobile) navMenuMobile.classList.toggle('active');
                     });
                 }
             } else if(window.innerWidth > 995) {
@@ -629,11 +559,8 @@
             }
         };
 
-        window.addEventListener('resize', () => {
-            styleMobile();
-        });
+        window.addEventListener('resize', styleMobile);
         styleMobile();
-        
         window.dispatchEvent(new Event('scroll'));
     </script>
 </body>
