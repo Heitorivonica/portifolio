@@ -4,6 +4,8 @@ Portfólio pessoal de **Heitor Ivonica**, Desenvolvedor Fullstack com foco em Fr
 
 Feito com **React**, **CSS puro** e **JavaScript**, usando **Vite**. Responsivo para desktop, Android e iOS.
 
+🔗 **Acesse online:** https://portifolio-heitor-chi.vercel.app/
+
 ## Tecnologias
 
 - React 18
