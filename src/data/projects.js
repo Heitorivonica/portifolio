@@ -6,7 +6,7 @@ export const projects = [
     description:
       'Este próprio site! Portfólio responsivo feito com React, CSS puro e JavaScript, funcionando em Android, iOS e desktop.',
     tags: ['React', 'CSS', 'JavaScript', 'Vite'],
-    repo: '', // TODO: link do repositório no GitHub
+    repo: 'https://github.com/Heitorivonica/portifolio',
     demo: '', // TODO: link do site publicado
   },
 ]
